@@ -12,7 +12,7 @@ class View
      */
     public static function getContentView($view)
     {
-        $file = __DIR__ . '/../../resource/view/' . $view . '.html';
+        $file = __DIR__ . '/../../resource/view/' . $view . '.phtml';
         return file_exists($file) ? file_get_contents($file) : '';
     }
 

@@ -16,7 +16,7 @@ class HomeController extends Controller
     public static function getHome()
     {
         $view = new View();
-        $content = $view::render('pages/home', ['name' => 'testando', 'description' => 'testando descricao']);
+        $content = $view->render('pages/home', ['name' => 'testando', 'description' => 'testando descricao']);
         return parent::getPage('conceito de MVC', $content);
     }
 }

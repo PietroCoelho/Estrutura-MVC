@@ -16,7 +16,7 @@ class Controller
 
     public static function getFooter()
     {
-         $view = new View();
+        $view = new View();
         return $view::render('pages/footer');
     }
 
@@ -28,6 +28,12 @@ class Controller
     public static function getPage($title, $content)
     {
         $view = new View();
-        return $view::render('pages/template', ['title' => $title, 'header' => self::getHeader(), 'content' => $content, 'footer' => self::getFooter()]);
+        return $view::render(
+            'pages/template',
+            ['title' => $title,
+             'header' => self::getHeader(), 
+             'content' => $content, 
+             'footer' => self::getFooter()]
+        );
     }
 }
