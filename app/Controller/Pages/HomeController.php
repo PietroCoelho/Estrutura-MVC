@@ -3,6 +3,7 @@
 namespace App\Controller\Pages;
 
 use App\Core\Controller;
+use App\Model\Entity\Organization;
 use App\Utility\View;
 
 class HomeController extends Controller 
@@ -16,7 +17,11 @@ class HomeController extends Controller
     public static function getHome()
     {
         $view = new View();
-        $content = $view->render('pages/home', ['name' => 'testando', 'description' => 'testando descricao']);
+        $organization= new Organization();
+        $content = $view->render('pages/home'
+        , ['name' => $organization->name
+        , 'description' => $organization->description
+    ]);
         return parent::getPage('conceito de MVC', $content);
     }
 }
